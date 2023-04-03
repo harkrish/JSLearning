@@ -21,7 +21,7 @@ var b= function() {
 //it results in TypeError
 
 //Anonymous function is a type of function statement
-// function () {  //syntaxError
+// function () {  //Does not have their own identity and gives syntaxError because of no function name
 
 // }  
 //They are used when functions are used as values and assign to variable
@@ -33,7 +33,7 @@ var b= function xyz() {
     console.log("b called");
 } 
 b();
-//xyz()  //if you call outside we will get Reference Error - xyz is not defined 
+//xyz()  //if you call outside we will get Reference Error - xyz is not defined (imp) 
 
 //xyz is not created in outer scope,but it is created as local variable 
 
@@ -43,6 +43,7 @@ b();
 var x = function(param1) { //gets values
     console.log(param1); 
 } 
+//Here we can pass another function or function statement
 //x(1); //In Arguments we pass values 
 x(function () { //passing another function inside function
 
@@ -52,8 +53,13 @@ function bcd() {
 
 }
 
-x(bcd); //prints bcd funtion 
+x(bcd); //pass the function statement and prints bcd funtion 
 
+var dum = function() { 
+    return function () {
+    }    
+}
+console.log(dum()); //printsanonymous function
 
 var fuc = function(param1) { //gets values
     return function xyx() {
@@ -72,4 +78,4 @@ can be executed inside closured function
 can return functions 
 */
 
-//Arrow functions 
+//Arrow functions  ( Es6- let,const) 
