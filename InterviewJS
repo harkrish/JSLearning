@@ -1,0 +1,19 @@
+redux which is just a state management tool
+const a ={
+value:'Hello'
+}
+const b ={
+value:'World'
+}
+console.log(a+b); //"objectobject"
+console.log(a.value+b.value); //"HelloWorld"
+
+The right answer to this question is
+"objectobject"
+
+Explanation:
+In #javascript, when you try to concatenate objects using the + operator, they are converted to strings. This conversion involves calling the toString() method on each object. 
+Since both a and b are objects (not strings), their toString() methods are called, resulting in "[object Object][object Object]". 
+Therefore, the output of console.log(a + b); will be "objectobject".
+Now, if you want to modify the behavior so that the output becomes "HelloWorld" , how would you achieve that without directly manipulating the toString() method of the objects a and b?
+
